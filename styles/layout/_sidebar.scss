@@ -1,0 +1,95 @@
+.sidebar {
+  display: flex;
+  justify-content: center;
+  width: 18rem;
+  color: $color-grey-dark-2; // for all text in sidebar
+
+  @include clearfix;
+  @include coordinateRoot;
+
+  &_profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+    animation: moveInLeft 1s;
+    #arrow_drop {
+      color: $color-select-light;
+    }
+
+    img {
+      width: 8rem;
+      height: 8rem;
+      border-radius: 50%;
+    }
+
+    &--location {
+      display: flex;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 100;
+    }
+
+    &--address {
+      font-size: 1rem;
+      letter-spacing: 1px;
+    }
+  }
+
+  &_navigation {
+    @include clearfix;
+    @include coordinateRoot;
+    
+    &--list {
+      position: absolute;  
+      top: 25%;
+      list-style: none;
+      text-align: center;
+      width: 100%;
+    }
+
+    &--item {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      text-align: center;
+      margin-top: 0.5rem;
+      height: 4.5rem;
+      width: 100%;
+      font-weight: 500;
+
+      &:hover,
+      &:active {
+        background-color: $color-select-item;
+        border-left: 1rem solid $color-select-light;
+        border-radius: 0px 10px 10px 0px;
+        transition: all 0.4s;
+      }
+    }
+
+    &--link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 2rem;
+      animation: moveInBottom 1s;
+      &:link,
+      &:visited {
+        color: $color-grey-dark-2;
+        text-decoration: none;
+        background-size: 220%;
+        transition: all 0.4s;
+
+        i {
+          margin-right: 2rem;
+        }
+
+      }
+
+      &:hover,
+      &:active {
+        color: $color-select-light;
+      }
+    }
+  }
+}
